@@ -102,8 +102,8 @@ export default function SendMessage() {
   };
 
   return (
-    <div className="container mx-auto my-8 p-6 bg-white rounded max-w-4xl">
-      <h1 className="text-4xl font-bold mb-6 text-center">
+    <div className="container mx-auto my-8 p-6 rounded max-w-4xl">
+      <h1 className="text-4xl font-bold mb-6 text-center text-custom-blue">
         Public Profile Link
       </h1>
 
@@ -114,7 +114,9 @@ export default function SendMessage() {
             name="content"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Send Anonymous Message to @{username}</FormLabel>
+                <FormLabel className="text-custom-blue">
+                  Send Anonymous Message to @{username}
+                </FormLabel>
                 <FormControl>
                   <Textarea
                     placeholder="Write your anonymous message here"
@@ -149,11 +151,13 @@ export default function SendMessage() {
           >
             Suggest Messages
           </Button>
-          <p>Click on any message below to select it.</p>
+          <p className="text-custom-blue">
+            Click on any message below to select it.
+          </p>
         </div>
-        <Card>
+        <Card className="custom-card-style">
           <CardHeader>
-            <h3 className="text-xl font-semibold">Messages</h3>
+            <h3 className="text-xl font-semibold text-custom-blue">Messages</h3>
           </CardHeader>
           <CardContent className="flex flex-col space-y-4">
             {error ? (
@@ -173,9 +177,9 @@ export default function SendMessage() {
           </CardContent>
         </Card>
       </div>
-      <Separator className="my-6" />
+      <Separator className="my-6 text-custom-blue" />
       <div className="text-center">
-        <div className="mb-4">Get Your Message Board</div>
+        <div className="mb-4 text-custom-blue">Get Your Message Board</div>
         <Link href={"/sign-up"}>
           <Button>Create Your Account</Button>
         </Link>

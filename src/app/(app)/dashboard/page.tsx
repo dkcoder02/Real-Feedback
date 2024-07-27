@@ -135,17 +135,21 @@ export default function UserDashboard() {
   };
 
   return (
-    <div className="my-8 mx-4 md:mx-8 lg:mx-auto p-6 bg-white rounded w-full max-w-6xl">
-      <h1 className="text-4xl font-bold mb-4">User Dashboard</h1>
+    <div className="my-8 mx-4 md:mx-8 lg:mx-auto p-6 rounded w-full max-w-6xl">
+      <h1 className="text-4xl font-bold mb-4 text-custom-blue">
+        User Dashboard
+      </h1>
 
       <div className="mb-4">
-        <h2 className="text-lg font-semibold mb-2">Copy Your Unique Link</h2>{" "}
-        <div className="flex items-center">
+        <h2 className="text-lg font-semibold mb-2 text-custom-blue">
+          Copy Your Unique Link
+        </h2>{" "}
+        <div className="flex items-center  ">
           <input
             type="text"
             value={profileUrl}
             disabled
-            className="input input-bordered w-full p-2 mr-2"
+            className="input input-bordered rounded-full bg-custom-blue text-black w-full p-2 mr-2"
           />
           <ToolTip message="Copy to clipboard">
             <Button onClick={copyToClipboard}>Copy</Button>
@@ -156,18 +160,23 @@ export default function UserDashboard() {
       <div className="mb-4">
         <Switch
           {...register("acceptMessages")}
+          className={`${acceptMessages ? "bg-green-400" : "bg-red-400"}`}
           checked={acceptMessages}
           onCheckedChange={handleSwitchChange}
           disabled={isSwitchLoading}
         />
-        <span className="ml-2">
+        <span
+          className={`ml-2 ${
+            acceptMessages ? "text-green-400" : "text-red-400"
+          }`}
+        >
           Accept Messages: {acceptMessages ? "On" : "Off"}
         </span>
       </div>
-      <Separator />
+      <Separator className="bg-custom-blue" />
 
       <Button
-        className="mt-4"
+        className="mt-4 bg-custom-blue custom-border"
         variant="outline"
         onClick={(e) => {
           e.preventDefault();

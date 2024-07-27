@@ -14,13 +14,13 @@ export default function Home() {
   return (
     <>
       {/* Main content */}
-      <main className="flex-grow flex flex-col items-center justify-center px-4 md:px-24 py-12 bg-gray-800 text-white">
+      <main className="flex-grow flex flex-col items-center justify-center px-4 md:px-24 py-12 bg-custom-light-blue text-custom-blue">
         <section className="text-center mb-8 md:mb-12">
           <h1 className="text-3xl md:text-5xl font-bold">
-            Dive into the World of Anonymous Feedback
+            Embark on a Journey of Honest and Anonymous Feedback
           </h1>
           <p className="mt-3 md:mt-4 text-base md:text-lg">
-            True Feedback - Where your identity remains a secret.
+            Real Reviews - Speak freely, stay hidden.
           </p>
         </section>
 
@@ -32,7 +32,7 @@ export default function Home() {
           <CarouselContent>
             {messages.map((message, index) => (
               <CarouselItem key={index} className="p-4">
-                <Card>
+                <Card className="custom-card-style">
                   <CardHeader>
                     <CardTitle>{message.title}</CardTitle>
                   </CardHeader>
@@ -40,9 +40,7 @@ export default function Home() {
                     <Mail className="flex-shrink-0" />
                     <div>
                       <p>{message.content}</p>
-                      <p className="text-xs text-muted-foreground">
-                        {message.received}
-                      </p>
+                      <p className="text-xs text-white">{message.received}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -52,7 +50,7 @@ export default function Home() {
         </Carousel>
       </main>
       {/* Footer */}
-      <footer className="text-center p-4 md:p-6 bg-gray-900 text-white">
+      <footer className="text-center p-4 md:p-6 bg-custom-blue text-custom-blue">
         © 2024 KD. All rights reserved.
       </footer>
     </>
